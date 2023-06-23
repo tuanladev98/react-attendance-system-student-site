@@ -7,7 +7,7 @@ const studentFetcher = () =>
   axios
     .get(`${ATTENDANCE_API_DOMAIN}/student/get-info`, {
       headers: {
-        authorization: `Bearer ${Cookies.get("access_token")}`,
+        authorization: `Bearer ${Cookies.get("student_access_token")}`,
       },
     })
     .then((response) => response.data);
