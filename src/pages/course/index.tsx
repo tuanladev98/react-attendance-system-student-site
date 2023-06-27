@@ -53,7 +53,7 @@ const CoursePage = () => {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <div className="grid gap-x-6 gap-y-10 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
               {courses.map((course) => (
                 <div key={course.id} className="group relative">
                   <div className="bg-white w-full border-solid border rounded-lg">
