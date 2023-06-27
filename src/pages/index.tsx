@@ -7,7 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 const Home = () => {
   return (
     <>
-      <Layout>home page</Layout>
+      <Layout>
+        <div className="bg-white"></div>
+      </Layout>
     </>
   );
 };

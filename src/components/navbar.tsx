@@ -23,15 +23,15 @@ export default function Example() {
   const menus = [
     { title: "Dashboard", href: "/", current: router.pathname === "/" },
     {
-      title: "My courses",
+      title: "Courses",
       href: "/course",
       current: router.pathname.startsWith("/course"),
     },
-    {
-      title: "Attendance settings",
-      href: "/attendance-setting",
-      current: router.pathname.startsWith("/attendance-setting"),
-    },
+    // {
+    //   title: "Attendance settings",
+    //   href: "/attendance-setting",
+    //   current: router.pathname.startsWith("/attendance-setting"),
+    // },
   ];
 
   return (
