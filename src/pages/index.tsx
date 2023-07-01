@@ -60,7 +60,11 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+        <h2 className="text-xl font-bold tracking-tight text-gray-900">
+          Weekly schedule ({format(sunday, "dd MMMM yyyy")} ~{" "}
+          {format(saturday, "dd MMMM yyyy")})
+        </h2>
+        <div className="bg-white mt-3 rounded-lg shadow-xl overflow-hidden">
           <div className="overflow-auto grid grid-cols-[70px,repeat(7,150px)] lg:grid-cols-[70px,repeat(7,minmax(0px,_1fr))] grid-rows-[auto,repeat(18,60px)] max-h-[400px]">
             {/* <!-- Calendar frame --> */}
             <div className="row-start-[1] col-start-[1] sticky top-0 z-10 bg-slate-200 bg-clip-padding text-slate-900 text-sm font-medium py-2 text-center flex flex-col items-center justify-center gap-y-1">
@@ -348,10 +352,6 @@ const Home = () => {
                 return (
                   <div
                     key={schedule.id}
-                    // className={classNames(
-                    //   getSchedulePosition(schedule),
-                    //   "bg-red-100 border border-red-700/10 rounded-lg mx-1 p-1 flex flex-col"
-                    // )}
                     className="bg-red-100 border border-red-700/10 rounded-lg mx-1 p-1 flex flex-col"
                     style={{
                       gridRowStart: schedule.start_hour - 4,
