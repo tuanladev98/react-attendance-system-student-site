@@ -3,8 +3,30 @@ import { Inter } from "next/font/google";
 import Layout from "@/components/layout";
 import { addDays, format, isToday, startOfWeek } from "date-fns";
 import { classNames } from "@/utils/class-name-util";
+import { useEffect, useState } from "react";
+import { CourseSchedule } from "@/types/course.type";
+import { formatTimeDisplay24Hours } from "@/utils/date-time-util";
+import axios from "axios";
+import { ATTENDANCE_API_DOMAIN } from "@/constants/axios-constant";
+import Cookies from "js-cookie";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const getSchedulePosition = (schedule: CourseSchedule) => {
+  if (schedule.day_of_week < 0 && schedule.day_of_week > 6) return "";
+
+  const col = `col-start-[${schedule.day_of_week + 2}]`;
+
+  const rowStart = `row-start-[${schedule.start_hour - 4}]`;
+
+  const rowEnd = `row-end-[${schedule.end_hour - 4 + 1}]`;
+
+  const marginTop = `mt-[${schedule.start_min}px]`;
+
+  const marginBottom = `mb-[${60 - schedule.end_min}px]`;
+
+  return `${rowStart} ${rowEnd} ${col} ${marginTop} ${marginBottom}`;
+};
 
 const Home = () => {
   const firstDayOfWeek = startOfWeek(new Date());
@@ -15,6 +37,25 @@ const Home = () => {
   const thursday = addDays(firstDayOfWeek, 4);
   const friday = addDays(firstDayOfWeek, 5);
   const saturday = addDays(firstDayOfWeek, 6);
+
+  const [courseSchedules, setCourseSchedules] = useState<CourseSchedule[]>([]);
+
+  useEffect(() => {
+    const fetchListSchedule = async () => {
+      const { data } = await axios.get(
+        `${ATTENDANCE_API_DOMAIN}/student/schedule`,
+        {
+          headers: {
+            authorization: `Bearer ${Cookies.get("student_access_token")}`,
+          },
+        }
+      );
+      console.log(data);
+      setCourseSchedules(data);
+    };
+
+    fetchListSchedule();
+  }, []);
 
   return (
     <>
@@ -302,19 +343,50 @@ const Home = () => {
             <div className="row-start-[19] col-start-[8]"></div>
 
             {/* <!-- Calendar contents --> */}
-            <div className="row-start-[2] row-end-[5] col-start-[3] mt-[30px] mb-[45px] bg-red-100 border border-red-700/10 rounded-lg mx-1 p-1 flex flex-col">
-              <span className="text-xs text-red-600">06:30 ~ 08:15</span>
-              <span className="text-xs font-medium text-red-600">
-                IT4996 - ĐATN
-              </span>
-            </div>
-
-            <div className="row-start-[4] row-end-[7] col-start-[3] mt-[30px] mb-[30px] bg-red-100 border border-red-700/10 rounded-lg mx-1 p-1 flex flex-col">
-              <span className="text-xs text-red-600">08:30 ~ 10:30</span>
-              <span className="text-xs font-medium text-red-600">
-                IT4996 - ĐATN
-              </span>
-            </div>
+            <>
+              {courseSchedules.map((schedule) => {
+                return (
+                  <div
+                    key={schedule.id}
+                    // className={classNames(
+                    //   getSchedulePosition(schedule),
+                    //   "bg-red-100 border border-red-700/10 rounded-lg mx-1 p-1 flex flex-col"
+                    // )}
+                    className="bg-red-100 border border-red-700/10 rounded-lg mx-1 p-1 flex flex-col"
+                    style={{
+                      gridRowStart: schedule.start_hour - 4,
+                      gridRowEnd:
+                        schedule.end_hour - (schedule.end_min > 0 ? 3 : 4),
+                      gridColumnStart: schedule.day_of_week + 2,
+                      marginTop:
+                        schedule.start_min > 0
+                          ? `${schedule.start_min}px`
+                          : undefined,
+                      marginBottom:
+                        schedule.end_min > 0
+                          ? `${60 - schedule.end_min}px`
+                          : undefined,
+                    }}
+                  >
+                    <span className="text-xs text-red-600">
+                      {formatTimeDisplay24Hours(
+                        schedule.start_hour,
+                        schedule.start_min
+                      )}{" "}
+                      ~{" "}
+                      {formatTimeDisplay24Hours(
+                        schedule.end_hour,
+                        schedule.end_min
+                      )}
+                    </span>
+                    <span className="text-xs font-medium text-red-600">
+                      {schedule.course?.subject?.subject_code} -{" "}
+                      {schedule.course?.subject?.subject_name}
+                    </span>
+                  </div>
+                );
+              })}
+            </>
           </div>
         </div>
       </Layout>
