@@ -151,199 +151,199 @@ const Home = () => {
             <div className="row-start-[2] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               06:00
             </div>
-            <div className="row-start-[2] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[2] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[2] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[2] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[2] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[2] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[2] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[2] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[2] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[2] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[2] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[2] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[2] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[2] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[3] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               07:00
             </div>
-            <div className="row-start-[3] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[3] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[3] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[3] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[3] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[3] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[3] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[3] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[3] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[3] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[3] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[3] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[3] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[3] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[4] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               08:00
             </div>
-            <div className="row-start-[4] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[4] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[4] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[4] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[4] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[4] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[4] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[4] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[4] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[4] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[4] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[4] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[4] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[4] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[5] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               09:00
             </div>
-            <div className="row-start-[5] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[5] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[5] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[5] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[5] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[5] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[5] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[5] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[5] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[5] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[5] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[5] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[5] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[5] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[6] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               10:00
             </div>
-            <div className="row-start-[6] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[6] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[6] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[6] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[6] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[6] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[6] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[6] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[6] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[6] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[6] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[6] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[6] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[6] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[7] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               11:00
             </div>
-            <div className="row-start-[7] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[7] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[7] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[7] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[7] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[7] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[7] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[7] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[7] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[7] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[7] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[7] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[7] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[7] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[8] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               12:00
             </div>
-            <div className="row-start-[8] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[8] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[8] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[8] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[8] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[8] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[8] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[8] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[8] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[8] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[8] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[8] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[8] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[8] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[9] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               13:00
             </div>
-            <div className="row-start-[9] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[9] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[9] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[9] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[9] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[9] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[9] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[9] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[9] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[9] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[9] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[9] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[9] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[9] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[10] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               14:00
             </div>
-            <div className="row-start-[10] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[10] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[10] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[10] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[10] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[10] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[10] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[10] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[10] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[10] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[10] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[10] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[10] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[10] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[11] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               15:00
             </div>
-            <div className="row-start-[11] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[11] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[11] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[11] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[11] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[11] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[11] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[11] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[11] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[11] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[11] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[11] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[11] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[11] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[12] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               16:00
             </div>
-            <div className="row-start-[12] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[12] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[12] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[12] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[12] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[12] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[12] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[12] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[12] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[12] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[12] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[12] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[12] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[12] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[13] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               17:00
             </div>
-            <div className="row-start-[13] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[13] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[13] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[13] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[13] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[13] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[13] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[13] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[13] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[13] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[13] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[13] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[13] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[13] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[14] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               18:00
             </div>
-            <div className="row-start-[14] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[14] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[14] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[14] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[14] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[14] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[14] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[14] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[14] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[14] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[14] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[14] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[14] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[14] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[15] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               19:00
             </div>
-            <div className="row-start-[15] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[15] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[15] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[15] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[15] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[15] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[15] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[15] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[15] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[15] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[15] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[15] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[15] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[15] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[16] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               20:00
             </div>
-            <div className="row-start-[16] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[16] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[16] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[16] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[16] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[16] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[16] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[16] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[16] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[16] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[16] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[16] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[16] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[16] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[17] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               21:00
             </div>
-            <div className="row-start-[17] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[17] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[17] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[17] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[17] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[17] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[17] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[17] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[17] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[17] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[17] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[17] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[17] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[17] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[18] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               22:00
             </div>
-            <div className="row-start-[18] col-start-[2] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[18] col-start-[3] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[18] col-start-[4] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[18] col-start-[5] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[18] col-start-[6] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[18] col-start-[7] border-slate-200 border-b border-r"></div>
-            <div className="row-start-[18] col-start-[8] border-slate-200 border-b"></div>
+            <div className="row-start-[18] col-start-[2] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[18] col-start-[3] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[18] col-start-[4] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[18] col-start-[5] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[18] col-start-[6] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[18] col-start-[7] border-dashed border-slate-200 border-b border-r"></div>
+            <div className="row-start-[18] col-start-[8] border-dashed border-slate-200 border-b"></div>
 
             <div className="row-start-[19] col-start-[1] bg-slate-100 border-slate-200 border-r text-xs p-1.5 text-center text-slate-900 uppercase sticky left-0 font-medium">
               23:00
             </div>
-            <div className="row-start-[19] col-start-[2] border-slate-200 border-r"></div>
-            <div className="row-start-[19] col-start-[3] border-slate-200 border-r"></div>
-            <div className="row-start-[19] col-start-[4] border-slate-200 border-r"></div>
-            <div className="row-start-[19] col-start-[5] border-slate-200 border-r"></div>
-            <div className="row-start-[19] col-start-[6] border-slate-200 border-r"></div>
-            <div className="row-start-[19] col-start-[7] border-slate-200 border-r"></div>
+            <div className="row-start-[19] col-start-[2] border-dashed border-slate-200 border-r"></div>
+            <div className="row-start-[19] col-start-[3] border-dashed border-slate-200 border-r"></div>
+            <div className="row-start-[19] col-start-[4] border-dashed border-slate-200 border-r"></div>
+            <div className="row-start-[19] col-start-[5] border-dashed border-slate-200 border-r"></div>
+            <div className="row-start-[19] col-start-[6] border-dashed border-slate-200 border-r"></div>
+            <div className="row-start-[19] col-start-[7] border-dashed border-slate-200 border-r"></div>
             <div className="row-start-[19] col-start-[8]"></div>
 
             {/* <!-- Calendar contents --> */}

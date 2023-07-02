@@ -1,6 +1,8 @@
 import Layout from "@/components/layout";
 import { ATTENDANCE_API_DOMAIN } from "@/constants/axios-constant";
+import { AttendanceSession } from "@/types/attendance-session.type";
 import { Course, CourseSchedule } from "@/types/course.type";
+import { getAttendanceSessionStatus } from "@/utils/attendance-session-util";
 import { classNames } from "@/utils/class-name-util";
 import { formatTimeDisplay } from "@/utils/date-time-util";
 import {
@@ -8,6 +10,7 @@ import {
   ClockIcon,
   EyeIcon,
   EyeSlashIcon,
+  QrCodeIcon,
 } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { format } from "date-fns";
@@ -19,12 +22,16 @@ import { useEffect, useState } from "react";
 const CourseDetailPage = () => {
   const router = useRouter();
   const courseId = router.query.courseId;
+  const currentDatetime = new Date();
 
   const [course, setCourse] = useState<Course>();
   const [schedulesByDayOfWeek, setSchedulesByDayOfWeek] = useState<
     { dayOfWeek: string; schedules: CourseSchedule[] }[]
   >([]);
   const [showCourseInfo, setShowCourseInfo] = useState<boolean>(false);
+  const [attendanceSessions, setAttendanceSessions] = useState<
+    AttendanceSession[]
+  >([]);
 
   useEffect(() => {
     const fetchCourseData = async () => {
@@ -71,10 +78,26 @@ const CourseDetailPage = () => {
     if (courseId) fetchCourseData();
   }, [courseId]);
 
+  useEffect(() => {
+    const fetchListSessionData = async () => {
+      const { data } = await axios.get<AttendanceSession[]>(
+        `${ATTENDANCE_API_DOMAIN}/student/course/${courseId}/session`,
+        {
+          headers: {
+            authorization: `Bearer ${Cookies.get("student_access_token")}`,
+          },
+        }
+      );
+      setAttendanceSessions(data);
+    };
+
+    if (courseId) fetchListSessionData();
+  }, [courseId]);
+
   return (
-    <>
+    <Layout>
       {course && (
-        <Layout>
+        <>
           <div className="bg-white shadow-lg rounded-lg my-2 p-4">
             <div>
               <div className="flex items-center gap-x-5">
@@ -181,9 +204,102 @@ const CourseDetailPage = () => {
               </div>
             </div>
           </div>
-        </Layout>
+
+          <>
+            <h2 className="text-xl font-bold tracking-tight text-gray-900 mt-10 mb-3">
+              Attendance sessions
+            </h2>
+
+            <div className="flex justify-between items-center bg-gray-200 w-full h-16 px-4 rounded-t-lg border-solid border bor"></div>
+            <div className="relative overflow-x-auto shadow-md">
+              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      Date
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Time
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Type
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Description
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Status
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {attendanceSessions.map((session) => (
+                    <tr
+                      key={session.id}
+                      className="bg-white border-b hover:bg-gray-200"
+                    >
+                      <td className="px-6 py-4">
+                        {format(
+                          new Date(session.session_date),
+                          "eee dd MMM yyyy"
+                        )}
+                      </td>
+                      <td className="px-6 py-4">{`${formatTimeDisplay(
+                        session.start_hour,
+                        session.start_min
+                      )} - ${formatTimeDisplay(
+                        session.end_hour,
+                        session.end_min
+                      )}`}</td>
+                      <td className="px-6 py-4">All students</td>
+                      <td className="px-6 py-4">{session.description}</td>
+                      <td className="px-6 py-4">
+                        <span
+                          className="rounded-full text-white px-3 py-0.5"
+                          style={{
+                            backgroundColor: getAttendanceSessionStatus(
+                              session,
+                              currentDatetime
+                            ).color,
+                          }}
+                        >
+                          {
+                            getAttendanceSessionStatus(session, currentDatetime)
+                              .status
+                          }
+                        </span>
+                      </td>
+                      <td className="flex items-center px-6 py-4 space-x-3">
+                        <Link
+                          href={`/course/${courseId}/session/${session.id}/#`}
+                          className="font-medium text-gray-950"
+                        >
+                          <div className="w-5 mr-1">
+                            <QrCodeIcon />
+                          </div>
+                        </Link>
+
+                        <Link
+                          href={`/course/${courseId}/session/${session.id}`}
+                          className="font-medium text-gray-600"
+                        >
+                          <div className="w-5 mr-1">
+                            <EyeIcon />
+                          </div>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        </>
       )}
-    </>
+    </Layout>
   );
 };
 
