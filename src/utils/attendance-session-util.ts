@@ -27,12 +27,30 @@ export const getAttendanceSessionStatus = (
 
   if (current.getTime() < sessionDatetimeStart.getTime())
     return { status: "Upcoming", color: "rgb(250 204 21)" };
+
   if (
     current.getTime() >= sessionDatetimeStart.getTime() &&
     current.getTime() <= sessionDatetimeEnd.getTime()
   )
     return { status: "Going on", color: "rgb(34 211 238)" };
-  if (current.getTime() > sessionDatetimeEnd.getTime())
+
+  if (
+    current.getTime() > sessionDatetimeEnd.getTime() &&
+    current.getTime() <=
+      sessionDatetimeEnd.getTime() +
+        (!session.overtime_minutes_for_late
+          ? 0
+          : session.overtime_minutes_for_late * 60 * 1000)
+  )
+    return { status: "Overtime", color: "rgb(129 140 248)" };
+
+  if (
+    current.getTime() >
+    sessionDatetimeEnd.getTime() +
+      (!session.overtime_minutes_for_late
+        ? 0
+        : session.overtime_minutes_for_late * 60 * 1000)
+  )
     return { status: "Finished", color: "rgb(74 222 128)" };
 
   return { status: "Upcoming", color: "rgb(250 204 21)" };

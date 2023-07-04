@@ -52,7 +52,9 @@ const SignIn = () => {
         }
       );
 
-      Cookies.set("student_access_token", data.accessToken);
+      Cookies.set("student_access_token", data.accessToken, {
+        expires: 365,
+      });
     } catch (error: any) {
       setErrorOccur(error.response.data.message);
     }
