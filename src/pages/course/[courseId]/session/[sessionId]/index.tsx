@@ -9,6 +9,7 @@ import {
   ClockIcon,
   MapPinIcon,
   PencilIcon,
+  Square3Stack3DIcon,
   TagIcon,
 } from "@heroicons/react/24/outline";
 import axios from "axios";
@@ -144,10 +145,10 @@ const SessionInfoAndResultPage = () => {
                 </div>
                 <div className="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">
-                    Type
+                    Overtime
                   </dt>
                   <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                    All students
+                    {attendanceSession.overtime_minutes_for_late ?? 0} minutes
                   </dd>
                 </div>
                 <div className="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -169,11 +170,11 @@ const SessionInfoAndResultPage = () => {
                 <div className="p-2 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-semibold leading-6 text-gray-900">
                     <span className="flex items-center gap-x-2">
-                      <ClockIcon className="h-5 w-5 text-white" />
+                      <Square3Stack3DIcon className="h-5 w-5" />
                       Session status:
                     </span>
                   </dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
+                  <dd className="mt-1 ml-7 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
                     <div className="flex items-center gap-x-3">
                       <span
                         className="rounded-full text-white px-3 py-0.5"
@@ -227,7 +228,7 @@ const SessionInfoAndResultPage = () => {
                       Record time:
                     </span>
                   </dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
+                  <dd className="mt-1 ml-7 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
                     {!sessionResult
                       ? "..."
                       : format(
@@ -243,7 +244,7 @@ const SessionInfoAndResultPage = () => {
                       Attendance result:
                     </span>
                   </dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
+                  <dd className="mt-1 ml-7 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
                     {!sessionResult?.attendanceStatus
                       ? "..."
                       : `${sessionResult.attendanceStatus.title} (${sessionResult.attendanceStatus.acronym})`}
@@ -256,7 +257,7 @@ const SessionInfoAndResultPage = () => {
                       Record by:
                     </span>
                   </dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
+                  <dd className="mt-1 ml-7 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
                     {!sessionResult
                       ? "..."
                       : sessionResult.record_by_teacher === 1
@@ -271,7 +272,7 @@ const SessionInfoAndResultPage = () => {
                       IP address:
                     </span>
                   </dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
+                  <dd className="mt-1 ml-7 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
                     {sessionResult?.ip_address ?? "..."}
                   </dd>
                 </div>
