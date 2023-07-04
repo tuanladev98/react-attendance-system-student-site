@@ -12,7 +12,7 @@ import {
   TagIcon,
 } from "@heroicons/react/24/outline";
 import axios from "axios";
-import { format, parse } from "date-fns";
+import { add, format, formatDistanceStrict, parse } from "date-fns";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -21,8 +21,8 @@ const SessionInfoAndResultPage = () => {
   const router = useRouter();
   const courseId = router.query.courseId;
   const sessionId = router.query.sessionId;
-  const currentDatetime = new Date();
 
+  const [countTime, setCountTime] = useState<number>(0);
   const [course, setCourse] = useState<Course>();
   const [attendanceSession, setAttendanceSession] =
     useState<AttendanceSession>();
@@ -78,6 +78,14 @@ const SessionInfoAndResultPage = () => {
 
     if (courseId && sessionId) fetchSessionResultData();
   }, [courseId, sessionId]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountTime(countTime + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [countTime]);
 
   return (
     <>
@@ -166,22 +174,50 @@ const SessionInfoAndResultPage = () => {
                     </span>
                   </dt>
                   <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-5 sm:mt-0">
-                    <span
-                      className="rounded-full text-white px-3 py-0.5"
-                      style={{
-                        backgroundColor: getAttendanceSessionStatus(
-                          attendanceSession,
-                          currentDatetime
-                        ).color,
-                      }}
-                    >
-                      {
+                    <div className="flex items-center gap-x-3">
+                      <span
+                        className="rounded-full text-white px-3 py-0.5"
+                        style={{
+                          backgroundColor: getAttendanceSessionStatus(
+                            attendanceSession,
+                            new Date()
+                          ).color,
+                        }}
+                      >
+                        {
+                          getAttendanceSessionStatus(
+                            attendanceSession,
+                            new Date()
+                          ).status
+                        }
+                      </span>
+
+                      {["Ongoing", "Overtime"].includes(
                         getAttendanceSessionStatus(
                           attendanceSession,
-                          currentDatetime
+                          new Date()
                         ).status
-                      }
-                    </span>
+                      ) && (
+                        <span>
+                          {formatDistanceStrict(
+                            add(
+                              parse(
+                                `${attendanceSession.session_date} ${attendanceSession.end_hour}:${attendanceSession.end_min}:0`,
+                                "yyyy-MM-dd H:m:s",
+                                new Date()
+                              ),
+                              {
+                                minutes:
+                                  attendanceSession.overtime_minutes_for_late ??
+                                  0,
+                              }
+                            ),
+                            new Date()
+                          )}{" "}
+                          left.
+                        </span>
+                      )}
+                    </div>
                   </dd>
                 </div>
                 <div className="p-2 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0">

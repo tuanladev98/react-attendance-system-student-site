@@ -244,7 +244,7 @@ const CourseDetailPage = () => {
                       <td className="px-6 py-4">
                         {format(
                           new Date(session.session_date),
-                          "eee dd MMM yyyy"
+                          "eee, dd MMMM yyyy"
                         )}
                       </td>
                       <td className="px-6 py-4">{`${formatTimeDisplay(
@@ -273,14 +273,14 @@ const CourseDetailPage = () => {
                         </span>
                       </td>
                       <td className="flex items-center px-6 py-4 space-x-3">
-                        <Link
+                        {/* <Link
                           href={`/course/${courseId}/session/${session.id}/#`}
                           className="font-medium text-gray-950"
                         >
                           <div className="w-5 mr-1">
                             <QrCodeIcon />
                           </div>
-                        </Link>
+                        </Link> */}
 
                         <Link
                           href={`/course/${courseId}/session/${session.id}`}
