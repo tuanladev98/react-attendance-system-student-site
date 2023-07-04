@@ -32,7 +32,7 @@ export const getAttendanceSessionStatus = (
     current.getTime() >= sessionDatetimeStart.getTime() &&
     current.getTime() <= sessionDatetimeEnd.getTime()
   )
-    return { status: "Going on", color: "rgb(34 211 238)" };
+    return { status: "Ongoing", color: "rgb(34 211 238)" };
 
   if (
     current.getTime() > sessionDatetimeEnd.getTime() &&
