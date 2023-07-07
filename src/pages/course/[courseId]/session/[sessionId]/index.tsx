@@ -200,6 +200,7 @@ const SessionInfoAndResultPage = () => {
                         ).status
                       ) && (
                         <span>
+                          about{" "}
                           {formatDistanceStrict(
                             add(
                               parse(
@@ -215,7 +216,7 @@ const SessionInfoAndResultPage = () => {
                             ),
                             new Date()
                           )}{" "}
-                          left.
+                          remaining (including overtime).
                         </span>
                       )}
                     </div>
