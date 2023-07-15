@@ -92,11 +92,14 @@ const TakeRecordPage = () => {
     let ipAddr: string;
     try {
       const { data } = await axios.get("https://geolocation-db.com/json");
-      ipAddr = data.IPv4;
+      console.log(data);
+      ipAddr = JSON.parse(data).IPv4;
     } catch (error) {
       setProcessError("Cannot detect your ip address. Please try again.");
       return;
     }
+
+    console.log(ipAddr);
 
     if (!ipAddr) {
       setProcessError("Cannot detect your ip address. Please try again.");
