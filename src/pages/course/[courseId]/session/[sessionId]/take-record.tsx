@@ -1,7 +1,5 @@
 import Layout from "@/components/layout";
 import { ATTENDANCE_API_DOMAIN } from "@/constants/axios-constant";
-import { AttendanceSession } from "@/types/attendance-session.type";
-import { Course } from "@/types/course.type";
 import { SessionResult } from "@/types/session-result.type";
 import axios, { AxiosError } from "axios";
 import Cookies from "js-cookie";
@@ -12,7 +10,6 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import checklistImg from "../../../../../../public/checklist.svg";
 import loadingImg from "../../../../../../public/loading.svg";
 import { delay } from "@/utils/delay-util";
-import { format } from "date-fns";
 import { Dialog, Transition } from "@headlessui/react";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import { classNames } from "@/utils/class-name-util";
@@ -92,10 +89,24 @@ const TakeRecordPage = () => {
       return;
     }
 
+    let ipAddr: string;
+    try {
+      const { data } = await axios.get("https://geolocation-db.com/json");
+      ipAddr = data.IPv4;
+    } catch (error) {
+      setProcessError("Cannot detect your ip address. Please try again.");
+      return;
+    }
+
+    if (!ipAddr) {
+      setProcessError("Cannot detect your ip address. Please try again.");
+      return;
+    }
+
     try {
       const { data } = await axios.post<SessionResult>(
         `${ATTENDANCE_API_DOMAIN}/student/record-attendance-session`,
-        undefined,
+        { ipAddr },
         {
           headers: {
             authorization: `Bearer ${Cookies.get("student_access_token")}`,
