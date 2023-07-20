@@ -272,7 +272,7 @@ const CourseDetailPage = () => {
                           }
                         </span>
                       </td>
-                      <td className="flex items-center px-6 py-4 space-x-3">
+                      <td className="px-6 py-4">
                         {/* <Link
                           href={`/course/${courseId}/session/${session.id}/#`}
                           className="font-medium text-gray-950"
@@ -282,14 +282,16 @@ const CourseDetailPage = () => {
                           </div>
                         </Link> */}
 
-                        <Link
-                          href={`/course/${courseId}/session/${session.id}`}
-                          className="font-medium text-gray-600"
-                        >
-                          <div className="w-5 mr-1">
-                            <EyeIcon />
-                          </div>
-                        </Link>
+                        <div className="flex items-center">
+                          <Link
+                            href={`/course/${courseId}/session/${session.id}`}
+                            className="font-medium text-gray-600"
+                          >
+                            <div className="w-5 mr-1">
+                              <EyeIcon />
+                            </div>
+                          </Link>
+                        </div>
                       </td>
                     </tr>
                   ))}
