@@ -1,3 +1,5 @@
+import { AttendanceSession } from "./attendance-session.type";
+
 export type AttendanceStatus = {
   id: number;
 
@@ -22,6 +24,8 @@ export type SessionResult = {
   record_by_teacher: number; // 0 or 1
 
   ip_address?: string;
+
+  attendanceSession?: AttendanceSession;
 
   attendanceStatus?: AttendanceStatus;
 };
