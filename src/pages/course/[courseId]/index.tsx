@@ -197,7 +197,7 @@ const CourseDetailPage = () => {
                       Description
                     </dt>
                     <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                      {course.description}
+                      {course.description ?? "..."}
                     </dd>
                   </div>
                 </dl>
@@ -206,31 +206,31 @@ const CourseDetailPage = () => {
           </div>
 
           <>
-            <h2 className="text-xl font-bold tracking-tight text-gray-900 mt-10 mb-3">
-              Attendance sessions
-            </h2>
-
-            <div className="flex justify-between items-center bg-gray-200 w-full h-16 px-4 rounded-t-lg border-solid border bor"></div>
+            <div className="flex justify-between items-center bg-gray-200 w-full h-16 mt-8 px-4 rounded-t-lg border-solid border bor">
+              <h2 className="text-xl font-bold tracking-tight text-gray-900">
+                Attendance sessions
+              </h2>
+            </div>
             <div className="relative overflow-x-auto shadow-md">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 whitespace-nowrap">
                       Date
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 whitespace-nowrap">
                       Time
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 whitespace-nowrap">
                       Type
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 whitespace-nowrap">
                       Description
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 whitespace-nowrap">
                       Status
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-6 py-3 whitespace-nowrap">
                       Actions
                     </th>
                   </tr>
@@ -241,22 +241,26 @@ const CourseDetailPage = () => {
                       key={session.id}
                       className="bg-white border-b hover:bg-gray-200"
                     >
-                      <td className="px-6 py-4">
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {format(
                           new Date(session.session_date),
                           "eee, dd MMMM yyyy"
                         )}
                       </td>
-                      <td className="px-6 py-4">{`${formatTimeDisplay(
+                      <td className="px-6 py-4 whitespace-nowrap">{`${formatTimeDisplay(
                         session.start_hour,
                         session.start_min
                       )} - ${formatTimeDisplay(
                         session.end_hour,
                         session.end_min
                       )}`}</td>
-                      <td className="px-6 py-4">All students</td>
-                      <td className="px-6 py-4">{session.description}</td>
-                      <td className="px-6 py-4">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        All students
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {session.description}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         <span
                           className="rounded-full text-white px-3 py-0.5"
                           style={{
@@ -272,7 +276,7 @@ const CourseDetailPage = () => {
                           }
                         </span>
                       </td>
-                      <td className="px-6 py-4">
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {/* <Link
                           href={`/course/${courseId}/session/${session.id}/#`}
                           className="font-medium text-gray-950"
