@@ -130,7 +130,7 @@ export default function Example() {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            href="#"
+                            href="/user-profile"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
@@ -140,7 +140,7 @@ export default function Example() {
                           </Link>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
+                      {/* <Menu.Item>
                         {({ active }) => (
                           <Link
                             href="#"
@@ -152,7 +152,7 @@ export default function Example() {
                             Settings
                           </Link>
                         )}
-                      </Menu.Item>
+                      </Menu.Item> */}
                       <Menu.Item>
                         {({ active }) => (
                           <div
