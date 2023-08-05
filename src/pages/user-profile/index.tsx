@@ -17,7 +17,7 @@ const UserProfile = () => {
   const [lastNameUpdate, setLastNameUpdate] = useState<string>();
   const [phoneNumberUpdate, setPhoneNumberUpdate] = useState<string>();
   const [genderUpdate, setGenderUpdate] = useState<string>();
-  const [ageUpdate, setAgeUpdate] = useState<number>();
+  const [ageUpdate, setAgeUpdate] = useState<string>();
   const [showCurPass, setShowCurPass] = useState<boolean>(false);
   const [showNewPass, setShowNewPass] = useState<boolean>(false);
   const [curPass, setCurPass] = useState<string>();
@@ -40,15 +40,21 @@ const UserProfile = () => {
   }, []);
 
   const handleUpdateInfo = async () => {
-    if (firstNameUpdate || lastNameUpdate || genderUpdate) {
+    if (
+      firstNameUpdate ||
+      lastNameUpdate ||
+      phoneNumberUpdate !== undefined ||
+      genderUpdate ||
+      ageUpdate !== undefined
+    ) {
       await axios.patch(
         `${ATTENDANCE_API_DOMAIN}/student/update-info`,
         {
           first_name: firstNameUpdate,
           last_name: lastNameUpdate,
-          phone_number: phoneNumberUpdate,
+          phone_number: phoneNumberUpdate === "" ? null : phoneNumberUpdate,
           gender: genderUpdate,
-          age: ageUpdate,
+          age: ageUpdate === "" ? null : Number(ageUpdate),
         },
         {
           headers: {
@@ -125,7 +131,7 @@ const UserProfile = () => {
                           htmlFor="first-name"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          First name
+                          First name <span className="text-red-500">*</span>
                         </label>
                         <div className="mt-2">
                           <input
@@ -147,7 +153,7 @@ const UserProfile = () => {
                           htmlFor="last-name"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Last name
+                          Last name <span className="text-red-500">*</span>
                         </label>
                         <div className="mt-2">
                           <input
@@ -169,7 +175,7 @@ const UserProfile = () => {
                           htmlFor="email"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Email address
+                          Email address <span className="text-red-500">*</span>
                         </label>
                         <div className="mt-2">
                           <input
@@ -195,7 +201,10 @@ const UserProfile = () => {
                             id="phone_number"
                             name="phone_number"
                             type="text"
-                            value={phoneNumberUpdate ?? student.phone_number}
+                            placeholder="Ex: 0123456789"
+                            value={
+                              phoneNumberUpdate ?? student.phone_number ?? ""
+                            }
                             onChange={(e) => {
                               e.preventDefault();
                               setPhoneNumberUpdate(e.target.value);
@@ -210,7 +219,7 @@ const UserProfile = () => {
                           htmlFor="student_code"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Student code
+                          Student code <span className="text-red-500">*</span>
                         </label>
                         <div className="mt-2">
                           <input
@@ -229,7 +238,7 @@ const UserProfile = () => {
                           htmlFor="gender"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Gender
+                          Gender <span className="text-red-500">*</span>
                         </label>
                         <div className="mt-2">
                           <select
@@ -260,10 +269,11 @@ const UserProfile = () => {
                             type="number"
                             name="age"
                             id="age"
-                            value={ageUpdate ?? student.age}
+                            placeholder="Ex: 21"
+                            value={ageUpdate ?? student.age ?? ""}
                             onChange={(e) => {
                               e.preventDefault();
-                              setAgeUpdate(parseInt(e.target.value));
+                              setAgeUpdate(e.target.value);
                             }}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-900 disabled:border-slate-200 disabled:shadow-none"
                           />
@@ -286,9 +296,9 @@ const UserProfile = () => {
                     className={classNames(
                       !firstNameUpdate &&
                         !lastNameUpdate &&
-                        !phoneNumberUpdate &&
+                        phoneNumberUpdate === undefined &&
                         !genderUpdate &&
-                        !ageUpdate
+                        ageUpdate === undefined
                         ? "hidden"
                         : "",
                       "text-sm font-semibold leading-6 text-gray-900"
@@ -302,9 +312,9 @@ const UserProfile = () => {
                     className={classNames(
                       !firstNameUpdate &&
                         !lastNameUpdate &&
-                        !phoneNumberUpdate &&
+                        phoneNumberUpdate === undefined &&
                         !genderUpdate &&
-                        !ageUpdate
+                        ageUpdate === undefined
                         ? "bg-slate-500 cursor-not-allowed"
                         : "bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600",
                       "rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -333,7 +343,8 @@ const UserProfile = () => {
                           htmlFor="cur_pass"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Current password
+                          Current password{" "}
+                          <span className="text-red-500">*</span>
                         </label>
                         <div className="relative mt-2">
                           <input
@@ -370,7 +381,7 @@ const UserProfile = () => {
                           htmlFor="new_pass"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          New password
+                          New password <span className="text-red-500">*</span>
                         </label>
                         <div className="relative mt-2">
                           <input
